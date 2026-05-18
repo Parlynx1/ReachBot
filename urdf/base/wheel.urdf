@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+  urdf/base/wheel.urdf
+  Standalone single omni-wheel link.
+  Used as a reference / sub-assembly.
+  Actual wheels are inlined in base.urdf as child links.
+
+  Geometry:
+    radius  = 0.06 m
+    width   = 0.03 m
+    mass    = 0.50 kg
+    axis    = Y  (wheel rolls along X, steers around Z)
+-->
+<robot name="omni_wheel">
+
+  <link name="wheel_link">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <!-- Solid cylinder I_axial = 0.5*m*r^2, I_radial = m*(3r^2+l^2)/12 -->
+      <inertia ixx="0.000477" ixy="0" ixz="0"
+               iyy="0.000900" iyz="0"
+               izz="0.000477"/>
+    </inertial>
+
+    <!-- Visual: mesh when available, cylinder fallback -->
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <mesh filename="../../assets/meshes/omni_wheel.obj" scale="1 1 1"/>
+      </geometry>
+      <material name="rubber_black">
+        <color rgba="0.12 0.12 0.12 1.0"/>
+      </material>
+    </visual>
+
+    <!-- Collision: cylinder (simpler, faster) -->
+    <collision>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.06" length="0.03"/>
+      </geometry>
+    </collision>
+  </link>
+
+</robot>

@@ -1,0 +1,14 @@
+astar:
+  grid_resolution: 0.1     # metres per cell
+  map_size_x: 10.0         # metres
+  map_size_y: 10.0
+  obstacle_inflation: 0.30  # safety margin around obstacles (m)
+  heuristic: "euclidean"    # "euclidean" or "manhattan"
+  diagonal_movement: true
+  diagonal_cost: 1.4142
+
+path_following:
+  look_ahead: 0.3           # pure pursuit look-ahead distance (m)
+  goal_tolerance: 0.08      # stop within this radius of goal (m)
+  max_linear_speed: 0.4     # m/s
+  max_angular_speed: 1.2    # rad/s

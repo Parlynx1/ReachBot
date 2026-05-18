@@ -1,0 +1,20 @@
+simulation:
+  gravity: [0, 0, -9.81]
+  time_step: 0.004
+  real_time: false
+  gui: true
+  solver_iterations: 150
+
+plane:
+  friction: 0.8
+
+robot:
+  start_pos: [0.0, 0.0, 0.05]
+  start_orn: [0.0, 0.0, 0.0]
+
+camera:
+  width: 320
+  height: 240
+  fov: 60
+  near: 0.01
+  far: 10.0

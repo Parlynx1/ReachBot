@@ -1,0 +1,23 @@
+ultrasonic:
+  num_sensors: 4           # front, back, left, right
+  max_range: 3.0           # metres
+  min_range: 0.02
+  noise_std: 0.005
+  ray_offsets:             # local frame offsets [x, y, z, roll, pitch, yaw]
+    front: [0.25, 0.0,  0.05, 0, 0, 0]
+    back:  [-0.25, 0.0, 0.05, 0, 0, 3.14159]
+    left:  [0.0,  0.25, 0.05, 0, 0, 1.5708]
+    right: [0.0, -0.25, 0.05, 0, 0, -1.5708]
+
+lidar:
+  num_rays: 360
+  max_range: 8.0
+  min_range: 0.05
+  noise_std: 0.01
+  height_offset: 0.12       # above base centre
+  fov_deg: 360
+
+force_sensor:
+  noise_std: 0.01           # Newtons
+  max_force: 50.0
+  sample_rate: 500          # Hz
